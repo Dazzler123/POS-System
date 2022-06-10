@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="245.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.AdminLoginFormController">
+   <children>
+      <Label layoutX="117.0" layoutY="29.0" prefHeight="34.0" prefWidth="208.0" text="Administrator Login">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUsername" layoutX="39.0" layoutY="88.0" prefHeight="31.0" prefWidth="345.0" promptText="Username" />
+      <TextField fx:id="txtPassword" layoutX="39.0" layoutY="139.0" prefHeight="31.0" prefWidth="345.0" promptText="Password" />
+      <JFXButton buttonType="RAISED" layoutX="291.0" layoutY="195.0" onAction="#btnLoginToAdmin" prefHeight="34.0" prefWidth="93.0" style="-fx-background-color: #98fb98;" text="Login" />
+      <JFXButton fx:id="btnClose" buttonType="RAISED" layoutX="188.0" layoutY="195.0" onAction="#btnCancelAdminLogin" prefHeight="34.0" prefWidth="93.0" style="-fx-background-color: #ff7f50;" text="Cancel" />
+   </children>
+</AnchorPane>

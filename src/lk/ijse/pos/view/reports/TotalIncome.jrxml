@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TotalIncome" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="534f4c86-6e6a-4934-9329-d2ea3ae0e280">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="POS Data Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT O.OrderDate, OD.OrderID, OD.ItemCode, ((OD.OrderQty*I.UnitPrice)-OD.Discount) AS Income
+FROM orderdetail AS OD, Item AS I, Orders AS O
+WHERE I.ItemCode=OD.ItemCode AND O.OrderID=OD.OrderID 
+ORDER BY OD.OrderID;
+]]>
+	</queryString>
+	<field name="OrderDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="OrderDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrderDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="OrderID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OrderID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrderID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="ItemCode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ItemCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="ItemCode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="Income" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Income"/>
+		<property name="com.jaspersoft.studio.field.label" value="Income"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="4" width="555" height="40" backcolor="#DBE0DA" uuid="cff6b88b-47a1-4a4c-82b8-f570d72f9e92"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="5" width="555" height="38" backcolor="#85E874" uuid="9fe10a73-9c26-4f82-88c0-8cc328e28152"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Total Income]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="58" width="60" height="20" uuid="47a5886c-fff8-4815-a2f7-ad99a0438d9b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE  : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="80" width="60" height="20" uuid="036f6af6-2810-4f58-9f15-0718538333df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIME : ]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="455" y="57" width="100" height="21" uuid="05499d84-6f29-4ca5-b2ee-23afc4da4ad6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="455" y="79" width="100" height="21" uuid="ddbfde55-c4b4-4237-af60-1e98c98e208f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="30" uuid="3e1cf024-d4d0-4e73-8887-ee5f0ed9a619">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70f40e45-f26b-4b4c-8c9c-049a1ec67e83"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="138" height="30" uuid="3d57a7af-87b5-4434-a508-c4ab4eb0ed47">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fac18d9b-eeda-4c2a-bda5-23fedd892c86"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="138" height="30" uuid="8baa8361-bcbf-4348-a0fc-f2df1ed89d67">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29d9c74d-698d-44a1-a320-e30745f2e61c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="30" uuid="3dcfa916-9f16-4688-aa47-1cd6b64d5564">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6ae37496-ead6-4a9d-bff8-4462ca12bc88"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Income]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="34" width="555" height="1" uuid="2f1adecd-efa4-4c12-8bc7-8daa64c3a74e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="141" height="30" uuid="38c1759a-e5bc-4f63-ac36-5363c56b8ff9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70f40e45-f26b-4b4c-8c9c-049a1ec67e83"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OrderDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="138" height="30" uuid="4362daf9-f401-4189-947a-ec7b3d1860db">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fac18d9b-eeda-4c2a-bda5-23fedd892c86"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OrderID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="30" uuid="f2071241-7a79-4155-a758-15abc5e14669">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29d9c74d-698d-44a1-a320-e30745f2e61c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ItemCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="30" uuid="b9bf821c-d112-47b8-b970-922f428c8780">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6ae37496-ead6-4a9d-bff8-4462ca12bc88"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Income}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>

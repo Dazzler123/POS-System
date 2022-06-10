@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="371.0" prefWidth="1129.0" style="-fx-background-color: #f0ffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.MainFormController">
+   <children>
+      <JFXButton buttonType="RAISED" layoutX="49.0" layoutY="109.0" onAction="#btnPlaceCustomerOrder" prefHeight="87.0" prefWidth="303.0" style="-fx-background-color: #dcdcdc;" text="Place Customer Order">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="396.0" layoutY="108.0" onAction="#btnManageCustomerOrder" prefHeight="89.0" prefWidth="334.0" style="-fx-background-color: #dcdcdc;" text="Manage Customer Order">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="767.0" layoutY="109.0" onAction="#btnAdminLogin" prefHeight="87.0" prefWidth="309.0" style="-fx-background-color: #dcdcdc;" text="Admin Login">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="591.0" layoutY="21.0" prefHeight="21.0" prefWidth="79.0" text="Date  : ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="666.0" layoutY="24.0" prefHeight="31.0" prefWidth="160.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="856.0" layoutY="19.0" prefHeight="40.0" prefWidth="79.0" text="Time  : ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="932.0" layoutY="22.0" prefHeight="37.0" prefWidth="88.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="247.0" prefHeight="100.0" prefWidth="299.0" text="POS System" textFill="#ff7000">
+         <font>
+            <Font name="System Bold Italic" size="47.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAM_PM" layoutX="1022.0" layoutY="22.0" prefHeight="37.0" prefWidth="53.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

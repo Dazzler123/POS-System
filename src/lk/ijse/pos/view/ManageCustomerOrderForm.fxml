@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="502.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.ManageCustomerOrderFormController">
+   <children>
+      <AnchorPane layoutX="9.0" layoutY="131.0" prefHeight="344.0" prefWidth="934.0">
+         <children>
+            <TableView fx:id="tblItemList" layoutX="8.0" layoutY="2.0" prefHeight="216.0" prefWidth="921.0">
+               <columns>
+                  <TableColumn fx:id="colItemCode" prefWidth="109.0" text="Item Code" />
+                  <TableColumn fx:id="colDescription" prefWidth="336.0" text="Description" />
+                  <TableColumn fx:id="colPackSize" prefWidth="107.0" text="Pack Size" />
+                  <TableColumn fx:id="colUnitPrice" prefWidth="155.0" text="Unit Price" />
+                  <TableColumn fx:id="colQty" prefWidth="100.0" text="Qty" />
+                  <TableColumn fx:id="colDiscount" prefWidth="113.0" text="Discount %" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="btnRemove" buttonType="RAISED" layoutX="248.0" layoutY="258.0" onAction="#btnRemoveItem" prefHeight="38.0" prefWidth="165.0" style="-fx-background-color: #fa8072;" text="- Remove Item">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="txtEditQty" layoutX="52.0" layoutY="264.0" prefHeight="31.0" prefWidth="124.0" promptText="Quantity" />
+            <Label layoutX="46.0" layoutY="232.0" prefHeight="21.0" prefWidth="77.0" text="Edit Qty  :" />
+            <JFXButton buttonType="RAISED" layoutX="52.0" layoutY="301.0" onAction="#btnSetQty" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: #fa8072;" text="Set Qty">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="27.0" layoutY="26.0" prefHeight="31.0" prefWidth="474.0" spacing="100.0">
+         <children>
+            <ComboBox fx:id="cbxCustID" prefHeight="31.0" prefWidth="187.0" promptText="Select Customer ID" />
+            <ComboBox fx:id="cbxOrderID" prefHeight="31.0" prefWidth="187.0" promptText="Select Order ID" />
+         </children>
+      </HBox>
+      <Label layoutX="530.0" layoutY="31.0" prefHeight="21.0" prefWidth="100.0" text="Order Date  : " />
+      <Label fx:id="lblOrderDate" layoutX="626.0" layoutY="29.0" prefHeight="27.0" prefWidth="178.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="84.0" text="Customer Name  : " />
+      <Label fx:id="lblCustName" layoutX="164.0" layoutY="81.0" prefHeight="27.0" prefWidth="395.0" textFill="#2b00ff">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="487.0" layoutY="435.0" prefHeight="51.0" prefWidth="438.0">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="252.0" layoutY="1.0" onAction="#btnConfirmEdits" prefHeight="44.0" prefWidth="194.0" style="-fx-background-color: orange;" text="Confirm Edits">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="51.0" layoutY="7.0" onAction="#btnCancelEdits" prefHeight="38.0" prefWidth="150.0" style="-fx-background-color: #ff4500;" text="Cancel">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

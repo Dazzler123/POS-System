@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="731.0" prefWidth="1195.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.AdminFormController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="21.0" prefHeight="362.0" prefWidth="1166.0">
+         <children>
+            <TableView fx:id="tblItems" layoutX="8.0" layoutY="2.0" prefHeight="354.0" prefWidth="1146.0">
+               <columns>
+                  <TableColumn fx:id="colItemCode" prefWidth="154.99993896484375" text="Item Code" />
+                  <TableColumn fx:id="colDescription" prefWidth="461.0" text="Description" />
+                  <TableColumn fx:id="colPackSize" prefWidth="181.0" text="Pack Size" />
+                  <TableColumn fx:id="colUnitPrice" prefWidth="173.0" text="Unit Price" />
+                  <TableColumn fx:id="colQtyOnHand" prefWidth="177.0" text="Quantity On Hand" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="395.0" prefHeight="228.0" prefWidth="1146.0">
+         <children>
+            <TextField fx:id="txtDescription" alignment="TOP_LEFT" layoutX="25.0" layoutY="55.0" prefHeight="154.0" prefWidth="300.0" promptText="Description" />
+            <Label layoutX="27.0" layoutY="8.0" text="Item Code  : ">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNewItemCode" layoutX="149.0" layoutY="8.0" prefHeight="30.0" prefWidth="98.0" text="I00-000" textFill="#0900ff">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <VBox layoutX="815.0" layoutY="16.0" prefHeight="186.0" prefWidth="263.0" spacing="20.0">
+               <children>
+                  <JFXButton fx:id="btnNew" buttonType="RAISED" onAction="#btnAddNewItem" prefHeight="48.0" prefWidth="263.0" style="-fx-background-color: #7fff00;" text="+ ADD NEW ITEM">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnUpdate" buttonType="RAISED" onAction="#btnUpdateItem" prefHeight="48.0" prefWidth="263.0" style="-fx-background-color: #ff8c00;" text="UPDATE ITEM">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnRemove" buttonType="RAISED" onAction="#btnRemoveItem" prefHeight="48.0" prefWidth="263.0" style="-fx-background-color: #f08080;" text="- REMOVE ITEM">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <VBox layoutX="365.0" layoutY="57.0" prefHeight="154.0" prefWidth="283.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="txtPackSize" prefHeight="40.0" prefWidth="283.0" promptText="Pack Size" />
+                  <TextField fx:id="txtUnitPrice" prefHeight="40.0" prefWidth="283.0" promptText="Unit Price (Rs.)" />
+                  <TextField fx:id="txtQtyOnHand" prefHeight="40.0" prefWidth="283.0" promptText="Qty On Hand" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="23.0" layoutY="628.0" prefHeight="0.0" prefWidth="1146.0" />
+      <JFXButton buttonType="RAISED" layoutX="43.0" layoutY="659.0" onAction="#btnToReports" prefHeight="48.0" prefWidth="219.0" style="-fx-background-color: #c0c0c0;" text="Reports">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1000.0" layoutY="658.0" onAction="#btnBack" prefHeight="48.0" prefWidth="144.0" style="-fx-background-color: #c0c0c0;" text="Back">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
